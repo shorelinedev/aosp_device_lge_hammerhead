@@ -15,7 +15,7 @@
 #
 
 KERNEL_DEFCONFIG := hammerhead_defconfig
-KERNEL_DIR := kernel
+KERNEL_DIR := kernel/msm
 
 -include $(TOP)/$(KERNEL_DIR)/$(MSM_DIR)/AndroidKernel.mk
 
