@@ -30,3 +30,8 @@ LOCAL_PATH := $(call my-dir)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 endif
+
+LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
+LOCAL_AAPT_FLAGS := --extra-packages com.koushikdutta.superuser:com.koushikdutta.widgets -S $(LOCAL_PATH)/../../../external/koush/Widgets/Widgets/res -S $(LOCAL_PATH)/../../../external/koush/Superuser/Superuser/res --auto-add-overlay
+
+LOCAL_SRC_FILES += $(call all-java-files-under,../../../external/koush/Superuser/Superuser/src) $(call all-java-files-under,../../../external/koush/Widgets/Widgets/src)
