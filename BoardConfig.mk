@@ -16,7 +16,6 @@
 
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_SMP := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
@@ -107,7 +106,6 @@ BOARD_HAL_STATIC_LIBRARIES := libdumpstate.hammerhead
 BOARD_SEPOLICY_DIRS += \
        device/lge/hammerhead/sepolicy
 
-# The list below is order dependent
 BOARD_SEPOLICY_UNION += \
        app.te \
        bluetooth_loader.te \
@@ -149,6 +147,10 @@ TARGET_TOUCHBOOST_FREQUENCY:= 1200
 
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 USE_DEVICE_SPECIFIC_CAMERA:= true
+
+ifeq ($(USE_SVELTE_KERNEL),true)
+MALLOC_IMPL := dlmalloc
+endif
 
 -include vendor/lge/hammerhead/BoardConfigVendor.mk
 
